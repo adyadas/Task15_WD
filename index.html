@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Array Programs</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f6fc;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .output {
+      background-color: #ffffff;
+      border-left: 6px solid #3498db;
+      margin: 20px 0;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .output h2 {
+      color: #3498db;
+      margin-bottom: 10px;
+    }
+
+    .output p {
+      color: #333333;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Array Operations</h1>
+  <div id="results"></div>
+
+  <script>
+    // Helper function to print output using DOM
+    function printOutput(title, content) {
+      const resultsDiv = document.getElementById("results");
+      const section = document.createElement("div");
+      section.className = "output";
+      section.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+      resultsDiv.appendChild(section);
+    }
+
+    // 1. Sort a JavaScript Array
+    function sortArray(arr) {
+      let sorted = [...arr].sort((a, b) => a - b);
+      printOutput("1. Sorted Array", `Original: [${arr.join(", ")}]<br>Sorted: [${sorted.join(", ")}]`);
+    }
+
+    // 2. Concatenate two arrays and store in a new array
+    function concatenateArrays(arr1, arr2) {
+      let combined = arr1.concat(arr2);
+      printOutput("2. Concatenated Array", `Array 1: [${arr1.join(", ")}]<br>Array 2: [${arr2.join(", ")}]<br>Combined: [${combined.join(", ")}]`);
+    }
+
+    // 3. Remove first element from a JavaScript Array
+    function removeFirstElement(arr) {
+      let original = [...arr];
+      let removed = arr.shift();
+      printOutput("3. Remove First Element", `Original: [${original.join(", ")}]<br>Removed Element: ${removed}<br>Remaining: [${arr.join(", ")}]`);
+    }
+
+    // Run all functions with sample data
+    sortArray([7, 3, 9, 1, 4]);
+    concatenateArrays(["apple", "banana"], ["cherry", "date"]);
+    removeFirstElement(["red", "green", "blue", "yellow"]);
+  </script>
+</body>
+</html>
